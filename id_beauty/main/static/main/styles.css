@@ -1,0 +1,267 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fbff;
+    color: #333;
+    overflow-x: hidden; /* Prevent landscape scroll */
+    animation: fadeIn 1s; /* Animation for body load */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Fullscreen Fix */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Ensures no landscape scroll */
+}
+
+/* Keyframes for Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Navigation Bar */
+nav {
+    background: linear-gradient(90deg, #0077FF, #00A3FF);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-sizing: border-box; /* Ensure padding is within the container bounds */
+    animation: slideIn 1s ease-out; /* Slide In animation for navbar */
+    position: fixed; /* Fix navigation bar at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #D4AF37;
+    transform: scale(1.1); /* Scale on hover */
+}
+
+/* Mobile Navigation */
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Animate Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fullscreen Header & Sections */
+header, .beauty-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 20px 20px; /* Added padding at the top to avoid overlap */
+    color: white;
+    box-sizing: border-box; /* Ensure padding is within the container bounds */
+    animation: fadeIn 2s; /* Fade in animation */
+    min-height: 100vh; /* Full viewport height */
+}
+
+header {
+    background: linear-gradient(45deg, #0077FF, #00A3FF);
+}
+
+.beauty-skills {
+    background: linear-gradient(45deg, #00A3FF, #0077FF);
+}
+
+.header-content {
+    max-width: 600px;
+}
+
+header h2, .beauty-skills h2 {
+    font-size: 2.8rem;
+}
+
+header p, .beauty-skills p {
+    font-size: 1.2rem;
+}
+
+header a.btn, .beauty-skills a.btn {
+    margin-top: 20px; /* Space above button */
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #D4AF37;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #caa245;
+    transform: scale(1.1); /* Scale on hover */
+}
+
+/* Featured Courses Section */
+.courses {
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box; /* Ensure padding is within the container bounds */
+    background: #e8f0ff; /* Light background for course section */
+    animation: fadeIn 1.5s; /* Fade in animation for course section */
+    min-height: 100vh; /* Full viewport height */
+}
+
+.course-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.course {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #D4AF37;
+    box-sizing: border-box; /* Ensure padding is within the container bounds */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.course:hover {
+    transform: scale(1.05); /* Scale on hover */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation: fadeIn 0.5s; /* Fade In animation for modal */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(90deg, #0077FF, #00A3FF);
+    color: white;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is within the container bounds */
+    animation: fadeIn 1s ease-out; /* Fade in animation for footer */
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #0077FF;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .course-grid {
+        flex-direction: column;
+    }
+
+    header h2, .beauty-skills h2 {
+        font-size: 2rem;
+    }
+
+    header p, .beauty-skills p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 24px;
+    }
+}

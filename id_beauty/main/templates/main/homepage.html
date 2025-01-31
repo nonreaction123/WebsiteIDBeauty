@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id Beauty</title>
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
+    <script defer src="{% static 'main/script.js' %}"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo-container">
+            <img src="{% static 'main/logo.jpg' %}" alt="Id Beauty Logo" class="logo">
+            <h1>Id Beauty</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#skills">Unlock Your Beauty Skills</a></li>
+            <li><a href="#courses">Featured Courses</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Unlock Your Beauty Skills Section -->
+    <section id="skills" class="beauty-skills">
+        <div class="header-content">
+            <h2>Unlock Your Beauty Skills</h2>
+            <p>Join our courses and become a beauty expert.</p>
+            <a href="#courses" class="btn">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section id="courses" class="courses">
+        <h2>Featured Courses</h2>
+        <div class="course-grid">
+            <div class="course" onclick="openModal('nail-course')">
+                <h3>Nail Technician Course</h3>
+                <p>Master nail styling techniques with expert guidance.</p>
+                <a href="#!" class="btn">Learn More</a>
+            </div>
+            <div class="course" onclick="openModal('skincare-course')">
+                <h3>Skincare Mastery</h3>
+                <p>Understand skincare essentials and treatments.</p>
+                <a href="#!" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Modals -->
+    <div id="nail-course" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('nail-course')">&times;</span>
+            <h2>Nail Technician Course</h2>
+            <p>Master nail styling techniques with expert guidance.</p>
+        </div>
+    </div>
+
+    <div id="skincare-course" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('skincare-course')">&times;</span>
+            <h2>Skincare Mastery</h2>
+            <p>Understand skincare essentials and treatments.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Id Beauty | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
