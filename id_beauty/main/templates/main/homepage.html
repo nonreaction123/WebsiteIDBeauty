@@ -9,7 +9,6 @@
     <script defer src="{% static 'main/script.js' %}"></script>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <nav>
         <div class="logo-container">
@@ -17,9 +16,14 @@
             <h1>Id Beauty</h1>
         </div>
         <ul class="nav-links">
-            <li><a href="#skills">Unlock Your Beauty Skills</a></li>
-            <li><a href="#courses">Featured Courses</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#courses">Courses</a></li>
             <li><a href="#">Contact</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
         </ul>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
     </nav>
@@ -29,7 +33,17 @@
         <div class="header-content">
             <h2>Unlock Your Beauty Skills</h2>
             <p>Join our courses and become a beauty expert.</p>
-            <a href="#courses" class="btn">Explore Courses</a>
+            {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                    <a href="{% url 'superuser_view' %}" class="btn">Explore Courses</a>
+                {% elif user.is_staff %}
+                    <a href="{% url 'admin_view' %}" class="btn">Explore Courses</a>
+                {% else %}
+                    <a href="{% url 'normal_user_view' %}" class="btn">Explore Courses</a>
+                {% endif %}
+            {% else %}
+                <a href="{% url 'login' %}" class="btn">Login to Explore Courses</a>
+            {% endif %}
         </div>
     </section>
 
@@ -71,6 +85,5 @@
     <footer>
         <p>© 2025 Id Beauty | All Rights Reserved</p>
     </footer>
-
 </body>
 </html>
